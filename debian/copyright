@@ -1,0 +1,51 @@
+Upstream-Name: Chromium's Compact Language Detector
+Upstream-Contact: Matt Sanford <matt@mzsanford.com>
+Source: https://github.com/mzsanford/cld
+Comments:
+ This package contains the CLD (Compact Language Detection) library,
+ extracted from the source code for Google's Chromium library at
+ <URL:http://src.chromium.org/svn/trunk/src/third_party/cld>, specifically revision 105735.
+ .
+ The original extraction was done by Mike McCandless and was altered to improve
+ the build and packaging as well as add new bindings for various languages.
+ .
+ The LICENSE is the same as Chromium's LICENSE and is included in the LICENSE file for reference.
+
+Files: debian/*
+Copyright: Copyright 2013 Damien Raude-Morvan <drazzib@debian.org>
+License: BSD
+
+Files: *
+Copyright:
+    Copyright (C) 2010-2012 The Chromium Authors
+    Copyright (C) 2011-2012 Michael McCandless
+    Copyright (C) 2011 Albert Simões
+    Copyright (C) 2012 Jehan
+License: BSD
+
+License: BSD
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+   * Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+ copyright notice, this list of conditions and the following disclaimer
+ in the documentation and/or other materials provided with the
+ distribution.
+    * Neither the name of Google Inc. nor the names of its
+ contributors may be used to endorse or promote products derived from
+ this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

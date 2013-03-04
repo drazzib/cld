@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+SOURCE=cld
+PACKAGE=libcld0
+
+%:
+	dh $@ --buildsystem=autoconf --with autotools_dev --with autoreconf
+
+override_dh_auto_clean:
+	dh_auto_clean
+	-(cd ports/java; mvn clean)
+
+override_dh_makeshlibs:
+	dh_makeshlibs -V '$(PACKAGE) (>= 0.1)'
+
+override_dh_auto_build:
+	dh_auto_build
+	-(cd ports/java; mvn test package)
+
+# Kill *.la files, and forget no-one:
+override_dh_install:
+	find debian/tmp -name '*.la' -delete
+	dh_install --fail-missing
+
+# Debug package:
+override_dh_strip:
+	dh_strip --dbg-package=$(PACKAGE)-dbg

@@ -1,0 +1,56 @@
+Source: cld
+Section: libs
+Priority: optional
+Maintainer: Damien Raude-Morvan <drazzib@debian.org>
+Build-Depends: autotools-dev, debhelper (>= 9), dh-autoreconf, pkg-config
+Standards-Version: 3.9.4
+Homepage: https://github.com/mzsanford/cld
+
+Package: libcld0
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Language Detection library - shared libraries
+ This library will detect the language of any inputed natural
+ language text, with reliability numbers.
+ .
+ This is an experimental library package, neither ABI or API are fixed
+ right now. As a consequence, generated dependencies are made as
+ strict as possible. It should only be used by mesa and weston for
+ the time being.
+
+Package: libcld0-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: libcld0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: Language Detection library - shared libraries (debug)
+ This library will detect the language of any inputed natural
+ language text, with reliability numbers.
+ .
+ This package contains the debug version of the libraries found in
+ libcld0. Non-developers likely have little use for this package.
+
+Package: libcld-jni
+Architecture: any
+Section: java
+Depends: libcld0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: Language Detection library - java binding
+ This library will detect the language of any inputed natural
+ language text, with reliability numbers.
+ .
+ This package contains the java binding of the libraries found in
+ libcld0.
+
+Package: libcld-dev
+Section: libdevel
+Priority: extra
+Architecture: any
+Depends: libcld0 (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Description: Language Detection library - development files
+ This library will detect the language of any inputed natural
+ language text, with reliability numbers.
+ .
+ This package contains the development headers for the libraries found
+ in libcld0. Non-developers likely have little use for this package.

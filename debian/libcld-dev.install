@@ -1,0 +1,3 @@
+usr/include
+usr/lib/*/libcld.a
+usr/lib/*/pkgconfig/cld.pc
