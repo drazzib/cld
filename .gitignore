@@ -25,3 +25,4 @@ ports/node/node_modules
 *.lo
 *.la
 .libs
+.pc
