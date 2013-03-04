@@ -30,7 +30,8 @@ libcld_la_LDFLAGS         = -version 0:1:0
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = cld.pc
-        
+
+pkglibdir = $(libdir)
   
 %Dictionary.cc %Dictionary.h:$(pkginclude_HEADERS) %LinkDef.hh
 	@ROOTCINT@ -f $*.cc -c $(AM_CPPLFAGS) $(INCLUDES) $^ 

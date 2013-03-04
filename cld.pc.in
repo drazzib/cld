@@ -8,5 +8,5 @@ Name: cld
 Description: Compact Language Detector
 Requires: 
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir}/cld -lcld
+Libs: -L${libdir} -lcld
 Cflags: -I${includedir}/cld 
