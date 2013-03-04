@@ -10,7 +10,7 @@ package com.mzsanford.cld;
 public class CompactLanguageDetector {
     static {
         // Bring on the hotness.
-        System.loadLibrary("cld");
+        System.loadLibrary("cldjava");
     }
 
     /**
