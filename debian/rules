@@ -15,7 +15,7 @@ override_dh_makeshlibs:
 
 override_dh_auto_build:
 	dh_auto_build
-	-(cd ports/java; mvn test package)
+	(cd ports/java; mvn test package)
 
 # Kill *.la files, and forget no-one:
 override_dh_install:
