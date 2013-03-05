@@ -37,6 +37,9 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
+                <environmentVariables>
+                   <LD_LIBRARY_PATH>${basedir}/../../../.libs/</LD_LIBRARY_PATH>
+                </environmentVariables>
                 <!-- Hack: Include all possible native types here rather than try to guess the currently active platform -->
                 <argLine>-Djava.library.path=${basedir}/../native/mac/target:${basedir}/../native/unix/target</argLine>
             </configuration>
