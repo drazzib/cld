@@ -8,6 +8,7 @@ PACKAGE=libcld0
 
 override_dh_auto_clean:
 	dh_auto_clean
+	-rm -rf cld/
 	-(cd ports/java; mvn clean)
 
 override_dh_makeshlibs:
@@ -15,6 +16,14 @@ override_dh_makeshlibs:
 
 override_dh_auto_build:
 	dh_auto_build
+	# Create temporary links for headers
+	# because Java JNI interface need headers
+	mkdir -p cld/encodings
+	mkdir -p cld/encodings/proto
+	ln -s ../languages/public/compact_lang_det.h cld/
+	ln -s ../languages/public/encodings.pb.h cld/
+	ln -s ../../../encodings/proto/encodings.pb.h cld/encodings/proto
+	ln -s ../../encodings/compact_lang_det cld/encodings/
 	(cd ports/java; mvn test package)
 
 # Kill *.la files, and forget no-one:
