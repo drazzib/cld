@@ -2,7 +2,12 @@ Source: cld
 Section: libs
 Priority: optional
 Maintainer: Damien Raude-Morvan <drazzib@debian.org>
-Build-Depends: autotools-dev, debhelper (>= 9), dh-autoreconf, pkg-config
+Build-Depends: autotools-dev,
+               debhelper (>= 9),
+               default-jdk,
+               dh-autoreconf,
+               maven,
+               pkg-config
 Standards-Version: 3.9.4
 Homepage: https://github.com/mzsanford/cld
 
