@@ -1,5 +1,9 @@
 #!/usr/bin/make -f
 
+srcpkg = $(shell LC_ALL=C dpkg-parsechangelog | grep '^Source:' | cut -d ' ' -f 2,2)
+debver = $(shell LC_ALL=C dpkg-parsechangelog | grep '^Version:' | cut -d ' ' -f 2,2 )
+upstreamver = $(shell echo $(debver) | cut -d '-' -f 1,1 )
+
 SOURCE=cld
 PACKAGE=libcld0
 
@@ -34,3 +38,10 @@ override_dh_install:
 # Debug package:
 override_dh_strip:
 	dh_strip --dbg-package=$(PACKAGE)-dbg
+
+
+# make orig tarball from repository content
+get-orig-source:
+	# orig tarball, turn directory into something nicer
+	git archive --format=tar --prefix=$(SOURCE)-$(upstreamver)/ HEAD | \
+		gzip -9 > $(SOURCE)_$(upstreamver).orig.tar.gz
